@@ -1,10 +1,3 @@
-:root{
-  --lightGray:#E5EAF3;
-  --gray:#525457;
-  --green: #85ce61;
-  --green_01: #4e8e2f;
-  --red: #f78989;
-}
 #app{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +12,7 @@ html{
 label{
   font-weight: 600;
 }
-.mainWrapper{
+.main-wrapper{
   padding: 0 15px;
 }
 .container{
@@ -30,6 +23,5 @@ label{
   @media (min-width: 1400px) {
     max-width: 1500px;
   }
-
-
 }
+

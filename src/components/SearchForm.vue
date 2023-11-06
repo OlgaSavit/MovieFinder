@@ -2,9 +2,9 @@
   <el-form
     @submit.prevent="onSearch(search)"
     :label-position="'left'"
-    style="max-width: 460px"
+    class="search-form"
   >
-    <div class="flexRow">
+    <div class="flex-row">
       <el-form-item label="Search">
         <el-input v-model="search" placeholder="search movies by Title" />
       </el-form-item>
@@ -34,14 +34,15 @@ const onSearch = (str) => {
 </script>
 
 <style>
-form {
+.search-form {
   margin: auto;
+  max-width: 460px;
 }
 .el-form-item {
   margin: 0;
   width: 100%;
 }
-.flexRow {
+.flex-row {
   margin-bottom: 30px;
   width: 100%;
   display: flex;

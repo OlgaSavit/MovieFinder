@@ -1,8 +1,8 @@
 <template>
-  <el-card class="wrapperCard">
+  <el-card class="wrapper-card">
     <router-link :to="{ name: 'Details', params: { id: movie.imdbID } }">
       <el-link :underline="false" type="success">
-        <div class="wrapperImg">
+        <div class="wrapper-img">
           <img
             :src="posterImage"
             class="image"
@@ -12,7 +12,7 @@
         </div>
       </el-link>
     </router-link>
-    <div style="padding: 14px">
+    <div class="info-wrapper">
       <router-link :to="{ name: 'Details', params: { id: movie.imdbID } }">
         <el-link :underline="false" type="success" href="#">
           <el-tooltip

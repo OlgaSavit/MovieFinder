@@ -1,11 +1,9 @@
 <template>
   <div class="common-layout">
-    <el-container class="container">
-      <el-header>
-        <PageHeader />
-      </el-header>
-      <el-main class="mainWrapper">
-        <div class="wrapperNavigation">
+    <el-container class="container is-vertical">
+      <PageHeader />
+      <el-main class="main-wrapper">
+        <div class="wrapper-navigation">
           <router-link to="/">
             <el-button :plain="!isActive('/')" type="success">Home</el-button>
           </router-link>
@@ -40,7 +38,7 @@ export default {
 };
 </script>
 <style>
-.wrapperNavigation {
+.wrapper-navigation {
   margin-bottom: 20px;
 }
 </style>

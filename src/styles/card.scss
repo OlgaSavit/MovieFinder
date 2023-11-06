@@ -1,11 +1,11 @@
-.wrapperCard {
+.wrapper-card {
   padding: 0;
   display: inline-block;
   width: 100%;
   .el-card__body {
     padding: 0;
   }
-  .wrapperImg {
+  .wrapper-img {
     height: 300px;
     width: 100%;
     .image {
@@ -13,6 +13,9 @@
       width: 100%;
       object-fit: cover;
     }
+  }
+  .info-wrapper{
+    padding: 14px;
   }
   .title {
     transition: .2s;
@@ -31,19 +34,15 @@
   .text {
     font-size: 14px;
   }
-
   .el-link,
   .el-link__inner {
     width: 100%;
   }
   .el-link__inner {
-
     &:hover {
       .title{
         color: var(--green);
-
       }
-
     }
   }
 }

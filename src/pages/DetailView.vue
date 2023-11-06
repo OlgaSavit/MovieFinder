@@ -12,10 +12,10 @@
 <script setup>
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
-const route = useRoute();
 import { useSearchStore } from "@/store/SearchStore";
 import CardDetails from "@/components/CardDetails.vue";
 
+const route = useRoute();
 const searchStore = useSearchStore();
 const cardId = route.params.id;
 onMounted(() => {

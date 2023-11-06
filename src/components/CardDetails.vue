@@ -1,8 +1,8 @@
 <template>
-  <el-card class="wrapperDetailsCard">
+  <el-card class="wrapper-details-card">
     <el-row :gutter="20">
       <el-col :xs="24" :sm="12" :md="12">
-        <div class="wrapperImg">
+        <div class="wrapper-img">
           <img
             :src="posterImage"
             class="image"
@@ -12,7 +12,7 @@
         </div>
       </el-col>
       <el-col :xs="24" :sm="12" :md="12">
-        <div style="padding: 14px">
+        <div class="info-wrapper">
           <el-table :data="tableData">
             <el-table-column
               class-name="label"
