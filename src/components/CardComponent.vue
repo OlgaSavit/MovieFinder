@@ -47,6 +47,7 @@ const handleImageError = () => {
   posterImage.value = defaultImg;
 };
 </script>
+
 <style scoped>
 @import "@/styles/card.scss";
 </style>
