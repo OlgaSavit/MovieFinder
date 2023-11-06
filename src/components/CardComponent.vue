@@ -4,9 +4,10 @@
       <el-link :underline="false" type="success">
         <div class="wrapperImg">
           <img
-            :src="props.movie.Poster"
+            :src="posterImage"
             class="image"
             :alt="props.movie.Title"
+            @error="handleImageError"
           />
         </div>
       </el-link>
@@ -31,7 +32,8 @@
   </el-card>
 </template>
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
+import defaultImg from "@/assets/default.jpg";
 
 const props = defineProps({
   movie: {
@@ -40,6 +42,10 @@ const props = defineProps({
     default: () => {},
   },
 });
+const posterImage = ref(props.movie.Poster);
+const handleImageError = () => {
+  posterImage.value = defaultImg;
+};
 </script>
 <style scoped>
 @import "@/styles/card.scss";

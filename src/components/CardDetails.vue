@@ -4,9 +4,10 @@
       <el-col :xs="24" :sm="12" :md="12">
         <div class="wrapperImg">
           <img
-            :src="props.movie.Poster"
+            :src="posterImage"
             class="image"
             :alt="props.movie.Title"
+            @error="handleImageError"
           />
         </div>
       </el-col>
@@ -32,7 +33,8 @@
   </el-card>
 </template>
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
+import defaultImg from "@/assets/default.jpg";
 
 const props = defineProps({
   movie: {
@@ -41,6 +43,10 @@ const props = defineProps({
     default: () => {},
   },
 });
+const posterImage = ref(props.movie.Poster);
+const handleImageError = () => {
+  posterImage.value = defaultImg;
+};
 const tableData = [
   {
     label: "Name",
