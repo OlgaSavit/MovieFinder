@@ -1,12 +1,15 @@
-.wrapperDetailsCard {
+.wrapper-details-card {
   padding: 0;
   display: inline-block;
   width: 100%;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $screen-md) {
    max-width: 500px;
   }
   @media screen and (max-width: 576px) {
     max-width: 100%;
+  }
+  .info-wrapper{
+    padding: 14px;
   }
   .el-card__body {
     padding: 0;
@@ -14,7 +17,7 @@
   .el-table__body{
     width: 100%!important;
   }
-  .wrapperImg {
+  .wrapper-img {
     height:100%;
     width: 100%;
     @media screen and (max-width: 992px) {

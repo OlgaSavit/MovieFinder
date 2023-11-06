@@ -1,35 +1,34 @@
 <template>
   <el-form
-    class="createMovieForm"
+    class="create-form"
     :label-position="'left'"
     label-width="80px"
-    style="max-width: 460px"
     ref="ruleFormRef"
     :model="formData"
     status-icon
     :rules="rules"
   >
-    <div class="flexRow">
+    <div class="flex-row">
       <el-form-item prop="title" label="Title">
-        <el-input v-model="formData.title" />
+        <el-input v-model="formData.title" maxlength="512" />
       </el-form-item>
     </div>
-    <div class="flexRow">
+    <div class="flex-row">
       <el-form-item prop="director" label="Director">
-        <el-input v-model="formData.director" />
+        <el-input v-model="formData.director" maxlength="512" />
       </el-form-item>
     </div>
-    <div class="flexRow">
+    <div class="flex-row">
       <el-form-item prop="year" label="Year">
         <el-date-picker
-          class="yearInput"
+          class="year-input"
           v-model="formData.year"
           type="year"
           placeholder="Pick a year"
         />
       </el-form-item>
     </div>
-    <div class="flexRow">
+    <div class="flex-row">
       <el-form-item v-model="formData.poster" prop="poster" label="Poster">
         <UploadImage
           :url="formData.poster"
@@ -51,29 +50,9 @@ import { reactive, ref } from "vue";
 import UploadImage from "@/components/UploadImage.vue";
 import { useSearchStore } from "@/store/SearchStore";
 import { uuid } from "vue-uuid";
+import { checkYear, isRequired } from "@/utils/validationRules";
 const searchStore = useSearchStore();
 const ruleFormRef = ref();
-const checkYear = (rule, value, callback) => {
-  if (!value) {
-    return callback(new Error("Please input the year"));
-  } else {
-    callback();
-  }
-};
-const isRequired = (rule, value, callback) => {
-  if (value === "") {
-    callback(new Error("Please input the value"));
-  } else {
-    callback();
-  }
-};
-const isRequiredPoster = (rule, value, callback) => {
-  if (formData.poster === "") {
-    callback(new Error("Please select the poster"));
-  } else {
-    callback();
-  }
-};
 
 const formData = reactive({
   title: "",
@@ -81,7 +60,13 @@ const formData = reactive({
   year: "",
   poster: "",
 });
-
+const isRequiredPoster = (rule, value, callback) => {
+  if (formData.poster === "") {
+    callback(new Error("Please select the poster"));
+  } else {
+    callback();
+  }
+};
 const rules = reactive({
   title: [{ validator: isRequired, trigger: "blur" }],
   director: [{ validator: isRequired, trigger: "blur" }],
@@ -118,9 +103,10 @@ const resetForm = (formEl) => {
 </script>
 
 <style>
-.createMovieForm {
+.create-form {
   margin: auto;
-  .yearInput {
+  max-width: 460px;
+  .year-input {
     width: 100% !important;
   }
   .el-form-item__label {
@@ -129,7 +115,7 @@ const resetForm = (formEl) => {
   .el-icon--zoom-in {
     display: none;
   }
-  .flexRow {
+  .flex-row {
     margin-bottom: 20px;
     width: 100%;
     display: flex;

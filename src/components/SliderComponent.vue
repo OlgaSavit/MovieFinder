@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapperSwiper">
+  <div class="wrapper-swiper">
     <swiper
       :slidesPerView="6"
       :spaceBetween="30"
@@ -49,7 +49,7 @@ const onReachEnd = () => {
 };
 </script>
 <style scoped>
-.wrapperSwiper {
+.wrapper-swiper {
   padding-left: 100px;
   padding-right: 100px;
   position: relative;

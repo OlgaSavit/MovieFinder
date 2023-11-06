@@ -8,5 +8,6 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "@/styles/_variables";
 @import "@/styles/global";
 </style>
