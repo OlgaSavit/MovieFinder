@@ -1,0 +1,49 @@
+.wrapperCard {
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  .el-card__body {
+    padding: 0;
+  }
+  .wrapperImg {
+    height: 300px;
+    width: 100%;
+    .image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .title {
+    transition: .2s;
+    font-size: 18px;
+    color: #4e8e2f;
+    position: initial;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 1.2;
+    min-height: 44px;
+  }
+  .text {
+    font-size: 14px;
+  }
+
+  .el-link,
+  .el-link__inner {
+    width: 100%;
+  }
+  .el-link__inner {
+
+    &:hover {
+      .title{
+        color: var(--green);
+
+      }
+
+    }
+  }
+}
